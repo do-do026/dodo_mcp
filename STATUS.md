@@ -1,5 +1,9 @@
 # dodo_mcp — 状态（STATUS）
-> 更新：2026-08-24 01:20
+> 更新：2026-08-24 01:34 | 当前：**一加 Operit 适配版**（oneplus/）；红米北极星版待建（redmi/）
+
+## 设备版本
+- **oneplus/**：一加+Operit，WS 手、内网(Tailscale)不通、公网 IP、stdio。已验证 WS/get_login_info/send_text。
+- **redmi/**（规划）：红米+北极星，可能改用远程 streamable HTTP/SSE 部署（红米不装 Python/插件）。
 
 ## 已完成
 - [x] 建仓库 do-do026/dodo_mcp（公开），初始 README/PLAN
