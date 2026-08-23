@@ -5,7 +5,7 @@
 
 ## 文件
 - `server.py`  — FastMCP server（工具入口）
-- `onebot.py`  — OneBot 手：发文本/语音/图片（base64 record = SnowLuma 语音条套路）
+- `onebot_ws.py` — **WS 版** OneBot 手：发文本/语音/图片（base64 record = SnowLuma 语音条套路）
 - `tts.py`     — 语音合成：edge(默认) / elevenlabs（可选）
 - `mcp.json`   — mcpServers 配置示例
 - `requirements.txt`
