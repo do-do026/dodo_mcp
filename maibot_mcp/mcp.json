@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "maibot_mcp": {
+      "command": "python3",
+      "args": ["/path/to/maibot_mcp/server.py"],
+      "env": {
+        "MAIBOT_ONEBOT_URL": "http://127.0.0.1:3000",
+        "MAIBOT_ONEBOT_TOKEN": "<你 MaiBot/NapCat 的 OneBot access token>",
+        "ELEVENLABS_API_KEY": ""
+      },
+      "autoApprove": ["send_text", "send_voice", "send_image", "get_login_info"]
+    }
+  }
+}
