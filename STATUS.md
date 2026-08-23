@@ -16,8 +16,13 @@
 - [ ] **QQ空间(说说)**：依赖 NapCat 扩展 API（OneBot v11 无），待摸
 - [ ] **识图回链**：`handle_image` 目前只回传 URL，需接脑侧本地识图/OCR 真读
 - [ ] **AstrBot MCP**：基于 astrbotmcp 另写一个（暂缓）
-- [ ] **本地/真机验证**：在 op/polaris MCP 界面接入跑通（WS 连接、发文本/语音/图片）
+- [x] **本地/真机验证（部分）**：WS 连通✅、`get_login_info`✅、`send_text`✅（message_id 2086325317）；语音条因容器装不上 edge-tts(PyPI 慢)未测
+- [ ] **语音条**：需在能装 edge-tts 或配 ELEVENLABS_API_KEY 的环境生成音频；record 传输链路已验证
+- [ ] **QQ空间(说说)**：依赖 NapCat 扩展 API（OneBot v11 无），待摸
+- [ ] **识图回链**：`handle_image` 目前只回传 URL，需接脑侧本地识图/OCR 真读
+- [ ] **AstrBot MCP**：基于 astrbotmcp 另写一个（暂缓）
 - [ ] 语音条试点：edge(默认)/elevenlabs，需配 ELEVENLABS_API_KEY
+- [ ] **接入 op/polaris**：mcpServers 配置导入（见 mcp.json，token 填 dodo-meow-meow）
 
 ## 关键结论（供回看）
 - MaiBot 在 GitHub 无"被外部脑经 MCP 驱动"的现成 server（全为客户端方向）；AstrBot 有（astrbotmcp）。
