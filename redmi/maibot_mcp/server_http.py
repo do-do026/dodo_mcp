@@ -24,7 +24,7 @@ mcp = FastMCP("maibot_mcp")
 BASE_URL = os.environ.get("MAIBOT_ONEBOT_URL", "ws://127.0.0.1:6098")
 TOKEN = os.environ.get("MAIBOT_ONEBOT_TOKEN", "")
 
-_bot = OneBotClient(BASE_URL, TOKEN)
+_bot = OneBotWSClient(BASE_URL, TOKEN)
 
 
 def _cleanup_tmp(path: Optional[str]) -> None:
