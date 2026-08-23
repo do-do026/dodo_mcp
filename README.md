@@ -1,33 +1,20 @@
-# dodo_mcp — dodo 的 MCP 迁移工程
+# redmi/ —— 红米 + 北极星 适配版
 
-> 面向「从 Operit 搬到北极星」的 MCP 版 QQ/AI 集成。把 dodo_napcat 的 QQ 收发/识图/触发逻辑，包成 MCP server，供北极星（或任何 MCP 客户端）接入；可对接 MaiBot / AstrBot 等 Agent 后端。
+> 北极星**不能装 Python/插件**，故采用「**远程 streamable HTTP/SSE**」接入：MCP server 部署在服务器 `101.43.38.124`，走 **Tailscale 内网** `100.85.178.93`，红米北极星用「远程」填 URL 即可，**红米零本地安装**。
 
-## 设备版本
-- **`oneplus/`** — 一加 Operit 适配版（WS、内网不通、公网 IP、stdio，已验证）★当前
-- **`redmi/`** — 红米 + 北极星版（规划中，可能用远程 streamable HTTP/SSE 部署）
+## 连线信息（2026-08-24 实测）
+- 红米能连 **Tailscale** `100.85.178.93`（一加不行，红米行）✅
+- 服务器 Python 3.12.3 + `fastmcp 3.4.4` + `websocket-client 1.7.0`（已就绪）✅
+- NapCat WS `6098` 就在服务器本机 → server 连 `ws://127.0.0.1:6098`
 
-## 背景
-- 现状：dodo_napcat（Operit 插件）走 NapCat + OneBot v11，靠 Operit 的 `Tools.Chat` 调 AI。
-- 目标：搬去北极星（只用 MCP），QQ 侧仍走 OneBot v11 / NapCat，AI/Agent 侧换成 MCP。
+## 端点（北极星用「远程」接入）
+- **URL**：`http://100.85.178.93:9080/mcp`
+- **类型**：streamable-http
+- 见 `maibot_mcp/mcp.json`
 
-## 关键结论（2026-08-24）
-- **本机 Operit 已是完整 MCP 主机**（mcp_config.json 有多个 server），可先在 op 上试 MCP。
-- **MaiBot（麦麦）**：QQ 陪伴型，支持 **语音/表情/识图/MCP(streamable HTTP)/插件系统**，人设更"活"。
-- **AstrBot**：通用 Agent 平台，**MCP 原生 / 多平台 / DeepSeek / 多模态 / 1000+ 插件**，生态更大。
-- 两者走 MCP 都是**标准 mcpServers JSON 配置**接入。
+## 部署位置（服务器）
+- MCP server 跑在 `101.43.38.124`（Tailscale），`~/redmi/maibot_mcp/`
+- 启动：`MAIBOT_ONEBOT_TOKEN=... python3 server_http.py`（streamable-http, :9080）
 
-## 可借鉴
-- `mcp-builder` / `mcp-cli`：写 & 测 MCP server 方法论。
-- `operit_editor`：本机 MCP 配置系统（mcp_config.json / 远程 endpoint / 部署规则）。
-- `napcat_pro_bridge`：QQ 触发/识图/按群绑定逻辑（要移植进 MCP server 的核心素材）。
-- `ptrel1/napcat_mcp`：把 NapCat/OneBot11 暴露成 MCP 工具的现成轮子。
-
-## 路线（敏捷）
-1. 先写 PLAN / DESIGN / ARCHITECTURE（迁移决策、两个后端对比、MCP 边界）。
-2. 写**一个最小可跑 MCP server**（先包一条：QQ 收 → 识图 → 回），用 mcp-cli/Inspector 验证。
-3. 在北极星（或 op）用 mcpServers 配置接入，验证闭环。
-4. 按需对接 MaiBot 或 AstrBot 当 Agent 后端。
-
-## 安全
-- 代码/配置不含真实 IP/token/QQ 号；敏感值走 env/config 占位符。
-- 提交前过敏感扫描。
+## 工具集
+send_text / send_voice / send_image / handle_image / get_login_info（同 oneplus 版，复用 SnowLuma 语音条链路）
