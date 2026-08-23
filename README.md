@@ -2,6 +2,10 @@
 
 > 面向「从 Operit 搬到北极星」的 MCP 版 QQ/AI 集成。把 dodo_napcat 的 QQ 收发/识图/触发逻辑，包成 MCP server，供北极星（或任何 MCP 客户端）接入；可对接 MaiBot / AstrBot 等 Agent 后端。
 
+## 设备版本
+- **`oneplus/`** — 一加 Operit 适配版（WS、内网不通、公网 IP、stdio，已验证）★当前
+- **`redmi/`** — 红米 + 北极星版（规划中，可能用远程 streamable HTTP/SSE 部署）
+
 ## 背景
 - 现状：dodo_napcat（Operit 插件）走 NapCat + OneBot v11，靠 Operit 的 `Tools.Chat` 调 AI。
 - 目标：搬去北极星（只用 MCP），QQ 侧仍走 OneBot v11 / NapCat，AI/Agent 侧换成 MCP。
