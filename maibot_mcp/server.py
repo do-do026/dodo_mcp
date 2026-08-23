@@ -18,12 +18,12 @@ from typing import Optional
 
 from fastmcp import FastMCP
 
-from onebot import OneBotClient, OneBotError
+from onebot_ws import OneBotWSClient as OneBotClient, OneBotError
 from tts import synthesize
 
 mcp = FastMCP("maibot_mcp")
 
-BASE_URL = os.environ.get("MAIBOT_ONEBOT_URL", "http://127.0.0.1:3000")
+BASE_URL = os.environ.get("MAIBOT_ONEBOT_URL", "ws://100.85.178.93:6098")
 TOKEN = os.environ.get("MAIBOT_ONEBOT_TOKEN", "")
 
 _bot = OneBotClient(BASE_URL, TOKEN)
