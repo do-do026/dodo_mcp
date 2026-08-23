@@ -23,7 +23,7 @@ from tts import synthesize
 
 mcp = FastMCP("maibot_mcp")
 
-BASE_URL = os.environ.get("MAIBOT_ONEBOT_URL", "ws://100.85.178.93:6098")
+BASE_URL = os.environ.get("MAIBOT_ONEBOT_URL", "ws://101.43.38.124:6098")
 TOKEN = os.environ.get("MAIBOT_ONEBOT_TOKEN", "")
 
 _bot = OneBotClient(BASE_URL, TOKEN)
