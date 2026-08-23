@@ -11,11 +11,12 @@
 - [x] **MaiBot MCP 第一版核心**：maibot_mcp/（server.py / onebot.py / tts.py / mcp.json / requirements.txt / README.md），语法通过，已推 GitHub
 
 ## 进行中 / 待办
-- [ ] **接线**：确认 MaiBot/NapCat 的 OneBot HTTP 地址 + token（mcp.json 占位符）
+- [x] **连线信息**：实读 NapCat `onebot11_810429614.json`，仅 WS(6098/token dodo-meow-meow)，HTTP 未启用
+- [x] **改走 WS（选 B）**：MaiBot MCP 改用 WS 客户端连 `ws://100.85.178.93:6098`（Tailscale 内网，不暴露公网）
 - [ ] **QQ空间(说说)**：依赖 NapCat 扩展 API（OneBot v11 无），待摸
 - [ ] **识图回链**：`handle_image` 目前只回传 URL，需接脑侧本地识图/OCR 真读
 - [ ] **AstrBot MCP**：基于 astrbotmcp 另写一个（暂缓）
-- [ ] **本地/真机验证**：在 op/polaris MCP 界面接入跑通
+- [ ] **本地/真机验证**：在 op/polaris MCP 界面接入跑通（WS 连接、发文本/语音/图片）
 - [ ] 语音条试点：edge(默认)/elevenlabs，需配 ELEVENLABS_API_KEY
 
 ## 关键结论（供回看）
