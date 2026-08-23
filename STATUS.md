@@ -3,7 +3,7 @@
 
 ## 设备版本
 - **oneplus/**：一加+Operit，WS 手、内网(Tailscale)不通、公网 IP、stdio。已验证 WS/get_login_info/send_text。
-- **redmi/**（规划）：红米+北极星，可能改用远程 streamable HTTP/SSE 部署（红米不装 Python/插件）。
+- **redmi/**：红米+北极星，**已上线** streamable-http 远程部署（服务器 100.85.178.93:9080/mcp，Tailscale 内网；红米零安装；已实测 MCP 握手成功）。
 
 ## 已完成
 - [x] 建仓库 do-do026/dodo_mcp（公开），初始 README/PLAN
