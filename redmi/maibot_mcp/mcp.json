@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "maibot_mcp": {
+      "url": "http://100.85.178.93:9080/mcp",
+      "connectionType": "streamable-http",
+      "env": {},
+      "autoApprove": ["send_text", "send_voice", "send_image", "get_login_info"]
+    }
+  }
+}
