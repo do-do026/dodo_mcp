@@ -15,9 +15,18 @@
 - 工具4：`qq_list_messages`（拉消息/触发）
 - （后续）按群绑定、回复规则、语音/表情
 
-## 交付顺序（敏捷）
-1. 文档：PLAN / DESIGN / ARCHITECTURE / STATUS（先写，可改）
-2. 最小 MCP server（Node/TS 或 Python/FastMCP）+ mcp.json 示例
+## 进度（2026-08-24）
+- [x] 文档：README / PLAN / ARCHITECTURE / STATUS / CHANGELOG
+- [x] 研究：MaiBot/AstrBot 生态、社区 QQ→MCP、SnowLuma 语音图片、MaiBot maim_message
+- [x] MaiBot MCP v1 核心（maibot_mcp/，FastMCP + OneBot 手 + TTS，复用 SnowLuma 语音条）
+- [ ] 接线（OneBot HTTP 地址+token）
+- [ ] mcp-cli/Inspector 本地验证
+- [ ] 北极星/op 配置接入 → 闭环
+- [ ] AstrBot MCP
+
+## 交付顺序（敏捷，参考）
+1. 文档：README / PLAN / DESIGN / ARCHITECTURE / STATUS（先写，可改）
+2. 最小 MCP server（Python/FastMCP）+ mcp.json 示例
 3. 用 mcp-cli / Inspector 本地验证
 4. 北极星（或 op）配置接入 → 闭环
 5. 对接 MaiBot / AstrBot
