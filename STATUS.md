@@ -28,6 +28,13 @@
 - [ ] 语音条试点：edge(默认)/elevenlabs，需配 ELEVENLABS_API_KEY
 - [ ] **接入 op/polaris**：mcpServers 配置导入（见 mcp.json，token 填 dodo-meow-meow）
 
+## 进度追加（2026-08-24 08:00）
+- [x] MaiBot 已 clone+装依赖（~/mai-bot，venv，faiss/fastapi/openai/playwright/maim-message 均 OK）
+- [x] 渡渡人设+语气范本已写 ~/mai-bot-prep
+- [x] 端口全景：6098 NapCat WS / 6099 NapCat面板 / 8000 OB / 8001 MaiBot WebUI(需bot.py) / 9080 maibot_mcp
+- [x] 凭证/地址已入本地记忆库
+- [ ] MaiBot WebUI配置 + OB受限写印象工具 + 活动流MCP + 连通验证
+
 ## 关键结论（供回看）
 - MaiBot 在 GitHub 无"被外部脑经 MCP 驱动"的现成 server（全为客户端方向）；AstrBot 有（astrbotmcp）。
 - MaiBot 的 QQ 侧能力（语音/表情/识图）= OneBot 能力，`hermes-snowluma` 已包成 MCP，可直接借。
